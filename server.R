@@ -1,14 +1,29 @@
 # Define server logic required to draw a histogram ----
 server <- function(input, output) {
   
-  # Histogram of the Old Faithful Geyser Data ----
-  # with requested number of bins
-  # This expression that generates a histogram is wrapped in a call
-  # to renderPlot to indicate that:
-  #
-  # 1. It is "reactive" and therefore should be automatically
-  #    re-executed when inputs (input$bins) change
-  # 2. Its output type is a plot
+  #Parameters 
+  tscale =5
+  period = 24
+  mu = ( 1 / ( 0.2683 - 0.1716 * exp( - 0.0788 * age ) ) )
+  circadian_amplitude = (- 7.5 + 2900 * exp( - 1.7 * mu))
+  upper_asymptote = (mu * 4.85)
+  upper_threshold 
+  lower_threshold 
+  mean_upper_threshold = 12.65
+  mean_lower_threshold = 11.65 
+  MSFshift  =2.34
+  phase = ((-87.8 + 41.4 * mu - 4.7 * mu * mu + jetlag + MSFshift) * 360 / 24 )
+  H_max =30
+  H_min = 0
+  H_shift = ( min-pycor - H_scale * H_min )
+  H_scale =  ( (0.85 * max-pycor - min-pycor ) / (H_max - H_min) )
+  H_level 
+  circadian 
+  T_start = round( -103.2 + 48.9 * mu - 5.4 * mu * mu  + MSFshift )
+  sleepiness = 0
+  Alertness = 0
+  
+
   output$distPlot <- renderPlot({
     
     t=seq(0,10,0.1)
